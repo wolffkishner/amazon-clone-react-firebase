@@ -5,21 +5,30 @@ import {
 } from "@material-ui/icons";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { auth } from "../firebase";
+import { logoUrl } from "../globalData";
 import { useStateValue } from "../StateProvider";
 import "./css/Navbar.css";
 
 const Navbar = () => {
-	const [{ basket }] = useStateValue();
+	const [{ basket, user }] = useStateValue();
+	const handleAuth = () => {
+		if (user) {
+			auth.signOut();
+		}
+	};
 
 	const [show, handleShow] = useState(false);
 	useEffect(() => {
 		window.addEventListener("scroll", () => {
 			if (window.scrollY > 60) {
 				handleShow(true);
-			} else handleShow(false);
+			} else {
+				handleShow(false);
+			}
 		});
 		return () => {
-			window.removeEventListener("scroll");
+			window.removeEventListener("scroll", handleShow);
 		};
 	}, []);
 
@@ -27,11 +36,7 @@ const Navbar = () => {
 		<>
 			<div className='header'>
 				<Link to='/'>
-					<img
-						src='https://pngimg.com/uploads/amazon/amazon_PNG11.png'
-						alt='Amazon Logo'
-						className='headerLogo'
-					/>
+					<img src={logoUrl} alt='Amazon Logo' className='headerLogo' />
 				</Link>
 				<div className='headerSearch'>
 					<input type='text' name='Search...' className='headerSearchInput' />
@@ -40,9 +45,15 @@ const Navbar = () => {
 					</button>
 				</div>
 				<div className='headerNav'>
-					<Link to='/login' className='headerOption button'>
-						<span className='headerOptionLineOne'>Hello</span>
-						<span className='headerOptionLineTwo'>Login</span>
+					<Link to={!user && "/login"} className='headerOption button'>
+						<div className='authBtns' onClick={handleAuth}>
+							<span className='headerOptionLineOne'>
+								Hello {!user && "Guest"} <br /> {user && user?.email}
+							</span>
+							<span className='headerOptionLineTwo'>
+								{user ? "Sign Out" : "Login"}
+							</span>
+						</div>
 					</Link>
 					<div className='headerOption button'>
 						<span className='headerOptionLineOne'>Returns &</span>

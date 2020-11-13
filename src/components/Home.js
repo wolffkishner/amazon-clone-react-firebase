@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./css/Home.css";
 import Product from "./Product";
 
 const Home = () => {
+	useEffect(() => {
+		document.title = "Amazon | Home";
+	}, []);
 	return (
 		<>
 			<div className='home'>

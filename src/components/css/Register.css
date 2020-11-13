@@ -1,0 +1,100 @@
+.registerPage .logo {
+    display: flex;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.registerPage .logo img {
+    max-width: 150px;
+    margin: 0px auto;
+}
+
+.registerPage .container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    min-width: 315px;
+    border: 1px solid #111111;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.registerPage .registerHeading {
+    font-size: clamp(32px, 5vw, 38px);
+    font-family: 'Roboto';
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.registerPage .registerForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 280px;
+}
+
+.registerPage .registerForm input {
+    padding: 7px 10px;
+    margin: 6px 0px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #111;
+}
+
+.registerPage .registerForm #submit {
+    padding: 8px !important;
+    font-size: 15px;
+    background-color: #F0C14B;
+    transition: 0.1s;
+    margin: 6px 0px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #111;
+}
+
+.registerPage .registerForm #submit:hover {
+    background-color: #fdc73d;
+    transition: 0.1s;
+}
+
+.registerPage .registerForm .login {
+    padding: 8px !important;
+    font-size: 15px;
+    background-color: #5f5f5f;
+    transition: 0.1s;
+    margin: 6px 0px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #111;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.registerPage .registerForm .login:hover {
+    background-color: #4b4b4b;
+    transition: 0.1s;
+}
+
+@media (max-width: 768px) {
+    .registerPage .container {
+        width: 60%;
+    }
+}
+
+@media (max-width: 576px) {
+    .registerPage .container {
+        width: 90%;
+        border: none;
+    }
+
+    .registerPage hr {
+        color: rgba(76, 0, 255, 0.027);
+    }
+}
+
+@media (min-width: 576px) {
+    .registerPage hr {
+        display: none;
+    }
+}

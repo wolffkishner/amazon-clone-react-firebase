@@ -27,6 +27,10 @@ const Checkout = () => {
 		setBasketFull();
 	}, [basket]);
 
+	useEffect(() => {
+		document.title = "Amazon | Checkout";
+	}, []);
+
 	return (
 		<>
 			<div className='checkout'>

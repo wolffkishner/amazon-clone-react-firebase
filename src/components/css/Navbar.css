@@ -108,6 +108,11 @@
     display: none !important;
 }
 
+.authBtns {
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 992px) {
     .header {
         padding: 5px 15px;
