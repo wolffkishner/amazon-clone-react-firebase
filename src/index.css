@@ -98,3 +98,9 @@ code {
       margin-right: auto !important;
   }
 }
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 60px;
+  }
+}

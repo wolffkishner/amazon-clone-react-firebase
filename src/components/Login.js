@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { logoUrlDark } from "../globalData";
+import React, { useEffect } from "react";
+import { loadPageFromTop, logoUrlDark } from "../globalData";
 import { Link, useHistory } from "react-router-dom";
 import "./css/Login.css";
-import { auth } from "../firebase";
+import { auth, googleAuth } from "../firebase";
 
 const Login = () => {
 	const history = useHistory();
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const login = (e) => {
+
+	const handleGoogleAuth = (e) => {
 		e.preventDefault();
 		auth
-			.signInWithEmailAndPassword(email, password)
+			.signInWithPopup(googleAuth)
 			.then((auth) => {
 				if (auth) {
 					history.push("/");
 				}
 			})
-			.catch((err) => alert(err.message));
+			.catch((e) => alert(e.message));
 	};
 
 	useEffect(() => {
 		document.title = "Amazon | Login";
+		loadPageFromTop();
 	}, []);
 
 	return (
@@ -33,30 +33,13 @@ const Login = () => {
 				<hr />
 				<div className='container mx-auto'>
 					<h2 className='signInHeading mx-auto'>Login</h2>
-					<form action='/login' method='post' className='loginForm mx-auto'>
-						<input
-							type='text'
-							value={email}
-							name='Email'
-							id='email'
-							placeholder='Email'
-							onChange={(e) => setEmail(e.target.value)}
+					<button onClick={handleGoogleAuth} className='googleLoginBtn'>
+						Login with Google
+						<img
+							src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/471px-Google_%22G%22_Logo.svg.png'
+							alt='Google Logo'
 						/>
-						<input
-							type='password'
-							value={password}
-							name='Password'
-							id='password'
-							placeholder='Password'
-							onChange={(e) => setPassword(e.target.value)}
-						/>
-						<button type='submit' value='Submit' id='submit' onClick={login}>
-							Submit
-						</button>
-						<Link to='/register' className='register'>
-							Create your account now
-						</Link>
-					</form>
+					</button>
 				</div>
 			</div>
 		</>

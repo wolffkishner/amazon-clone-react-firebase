@@ -1,0 +1,88 @@
+.navbar .closeIcon {
+    position: absolute;
+    right: 0px;
+    margin: 5px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.navbar .sideMenu {
+    background: rgb(247, 245, 245);
+    position: fixed;
+    width: 80%;
+    max-width: 320px;
+    min-width: 272px;
+    z-index: 9999;
+    min-height: 100vh !important;
+    height: 100vh;
+    box-shadow: 6px 0px 25px #18171746;
+    left: -320px;
+    transition: ease 0.375s;
+}
+
+.navbar .sideMenu .userInfo {
+    display: flex;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.navbar .sideMenu .userInfo img {
+    display: flex;
+    border-radius: 50%;
+    max-height: 36px;
+    margin-top: 4px;
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.navbar .sideMenu .userInfo .innerUi {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.navbar .sideMenu .userInfo .innerUi h3 {
+    display: flex;
+    font-family: 'Noto Sans JP' !important;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.navbar .sideMenu .userInfo .innerUi .lineTwo .loginLink {
+    text-decoration: none !important;
+    color: #111;
+}
+
+.navbar .sideMenu .userInfo .innerUi .lineTwo .loginLink:hover {
+    text-decoration: none !important;
+    color: rgb(43, 43, 43);
+}
+
+.navbar .sideMenu .menuDivider {
+    border-color: rgba(17, 17, 17, 0.24);
+    border-width: 1px;
+    margin-top: 7px;
+}
+
+.navbar .sideMenu .navMenu {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.navbar .sideMenu .navMenu li {
+    font-size: 20px;
+    padding: 9px 0px;
+    padding-left: 15px;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.24);
+}
+
+.navbar .sideNavShow {
+    left: 0px !important;
+    transition: ease 0.375s;
+}
+
+.navbar .sideMenu .menuLink {
+    text-decoration: none !important;
+    color: #111;
+}

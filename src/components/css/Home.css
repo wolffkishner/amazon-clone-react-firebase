@@ -42,5 +42,9 @@
         mask-image: linear-gradient(180deg,#000,transparent);
         padding-bottom: 20px;
     }
+
+    .headerFixed {
+        margin-top: 52px;
+    }
     
 }

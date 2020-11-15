@@ -1,10 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { loadPageFromTop } from "../globalData";
 import "./css/Home.css";
 import Product from "./Product";
 
 const Home = () => {
+	const [show, handleShow] = useState(false);
+	useEffect(() => {
+		window.addEventListener("scroll", () => {
+			if (window.scrollY > 60) {
+				handleShow(true);
+			} else {
+				handleShow(false);
+			}
+		});
+		return () => {
+			window.removeEventListener("scroll", handleShow);
+		};
+	}, []);
+
 	useEffect(() => {
 		document.title = "Amazon | Home";
+		loadPageFromTop();
 	}, []);
 	return (
 		<>
@@ -18,7 +34,7 @@ const Home = () => {
 					<img
 						src='https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Karu/2020/May/Hero/Karu_45M_en_US._SX828_CB432509718_.jpg'
 						alt='Hero'
-						className='heroImgMob'
+						className={`heroImgMob ${show && `headerFixed`}`}
 					/>
 
 					{/* Products Row */}

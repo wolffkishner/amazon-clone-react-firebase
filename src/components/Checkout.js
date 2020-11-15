@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { loadPageFromTop } from "../globalData";
 import { useStateValue } from "../StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
 import "./css/Checkout.css";
@@ -29,6 +30,7 @@ const Checkout = () => {
 
 	useEffect(() => {
 		document.title = "Amazon | Checkout";
+		loadPageFromTop();
 	}, []);
 
 	return (

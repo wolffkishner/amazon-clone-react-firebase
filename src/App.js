@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar";
 import Checkout from "./components/Checkout";
 import { useStateValue } from "./StateProvider";
 import Login from "./components/Login";
-import Register from "./components/Register";
 import { auth } from "./firebase";
 
 function App() {
@@ -46,9 +45,6 @@ function App() {
 				</Route>
 				<Route exact path='/login'>
 					<Login />
-				</Route>
-				<Route exact path='/register'>
-					<Register />
 				</Route>
 				<Route exact path='/checkout'>
 					<Navbar />

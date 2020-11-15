@@ -76,6 +76,30 @@
     transition: 0.1s;
 }
 
+.loginPage .googleLoginBtn {
+    display: flex; 
+    background: white; 
+    outline: none;
+    border: 1px solid#d3d1d1;
+    margin: 6px 0px;
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.loginPage .googleLoginBtn:hover {
+    background-color: #f8f7f76c;
+    transition: 0.2s;
+}
+
+.loginPage .googleLoginBtn img {
+    max-height: 26px;
+    margin-left: 8px;
+}
+
 @media (max-width: 768px) {
     .loginPage .container {
         width: 60%;

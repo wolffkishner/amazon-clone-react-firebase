@@ -6,7 +6,7 @@
     position: sticky;
     top: 0;
     z-index: 999;
-    padding: 5px 50px;
+    padding: 5px 40px;
     justify-content: space-between;
     font-family: 'Noto Sans JP', sans-serif !important;
     font-weight: 500;
@@ -22,7 +22,7 @@
 
 .headerSearch, .headerSearch:focus {
     display: flex;
-    width: 65%;
+    width: 57%;
     border: none;
     box-shadow: none;
     margin: 0px 4px;
@@ -37,6 +37,7 @@
     font-size: 16px;
     color: #111111;
     border-radius: 3px 0px 0px 3px;
+    padding: 7px;
 }
 
 .headerSearchIcon, .headerSearchIcon:focus {
@@ -113,15 +114,16 @@
     flex-direction: column;
 }
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
     .header {
         padding: 5px 15px;
     }
-}
+} */
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .header {
         position: relative !important;
+        padding: 5px 15px;
     }
 
     .headerSearch {
@@ -132,7 +134,10 @@
         display: flex !important;
         width: 100%;
         height: 52px;
-        position: sticky !important;
+    }
+
+    .fixHeaderMob {
+        position: fixed !important;
     }
 
     .headerSearchInputMob, .headerSearchInputMob:focus {
@@ -145,6 +150,7 @@
         font-size: 16px;
         color: #111111;
         border-radius: 3px 0px 0px 3px;
+        padding: 7px;
     }
     
     .headerSearchIconMob, .headerSearchIconMob:focus {
@@ -187,6 +193,10 @@
         display: flex !important;
     }
 
+    .menuToggler {
+        font-size: 30px !important;
+    }
+
 }
 
 @media (max-width: 576px) {
@@ -201,9 +211,5 @@
     .cartItemNumber {
         height: 22px;
         width: 22px;   
-    }
-
-    .menuToggler {
-        font-size: 30px !important;
     }
 }
